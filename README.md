@@ -28,6 +28,13 @@ WARNING: The read and write data buses must have the same width.
 
 NOTE: Data transfer can not occur concurrently because the read data and write data buses do not have their own individual handshake signals.
 
+**ERROR Response**
+PSLVERR can be used to indicate an error condition on an APB transfer. Error conditions can occur on both read and write transactions.
+
+PSLVERR is only considered valid during the last cycle of an APB transfer, when PSEL, PENABLE, and PREADY are all HIGH.
+
+NOTE: Error response is recommended, but not required, that PSLVERR is driven LOW when PSEL, PENABLE, or PREADY are LOW.
+
 # Operating States 
 The state machine operates through the following states:
 
