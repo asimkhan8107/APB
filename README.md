@@ -42,6 +42,11 @@ The state machine operates through the following states:
                   - PWRITE
                   - PWDATA, only for write transaction
                   - PSTRB
+
+EXIT from ACCESS state is controlled by the PREADY signal from the computer.
+- If the PREADY is held LOW by the Completer, then the interface remains in thr ACCESS state.
+- If the PREADY is driven HIGH by the Completer, then the ACCESS state is exited and the bus returns to the IDLE state if no more transaction are required. Alternatively, the bus moves directlt to the SETUP state if another transfer follows. 
+
                   
 
 
