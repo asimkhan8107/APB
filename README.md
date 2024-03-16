@@ -30,8 +30,11 @@ NOTE: Data transfer can not occur concurrently because the read data and write d
 
 # Operating States 
 The state machine operates through the following states:
+
 **IDLE**    This is the default state of thr APB iterface.
+
 **SETUP**   When a transfer is required, the interface moves into the SETUP state, where the appropriate select signal, PSEL is asserted. The interface only remains in the SETUP state for one clock cycle and always moves to the ACCESS state on the next rising edge of the clock.
+
 **ACCESS**  The enable signal, PENABLE is asserted in the ACCESS state. The following signal must not change in the transition between SETUP and ACCESS and between cycles in the ACCESS state:
                   - PADDR
                   - PPROT
