@@ -100,7 +100,7 @@ When a write transaction receive an error, this does not mean that the register 
 
 Read transaction that receive an error can return invalid data. There is no requirement for the peripheral to drive te data bus to all 0s for a read error. A Requester which receives an error response to a read transfer might still use the data.
 
-A Completer can not rely on the error response to prevent the reading of a value on PRDATA.
+A read transfer can also complete with an error response, indicating that there is no valid read data available.
 
 
 
