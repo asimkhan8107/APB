@@ -54,7 +54,32 @@ The state machine operates through the following states:
 
 EXIT from ACCESS state is controlled by the PREADY signal from the completer.
 - If the PREADY is held LOW by the Completer, then the interface remains in thr ACCESS state.
-- If the PREADY is driven HIGH by the Completer, then the ACCESS state is exited and the bus returns to the IDLE state if no more transaction are required. Alternatively, the bus moves directlt to the SETUP state if another transfer follows. 
+- If the PREADY is driven HIGH by the Completer, then the ACCESS state is exited and the bus returns to the IDLE state if no more transaction are required. Alternatively, the bus moves directlt to the SETUP state if another transfer follows.
+
+# Transfer
+
+# Write Transfer
+APB interface consist of two types of write transfer:
+- With no wait states
+- With wait states
+
+**With no wait states**
+
+The setup phase of the write transfer occurs at T1. The select signal, PSEL, is asserted, which means that PADDR, PWRITE, and PWDATA must be valid.
+
+The access phase of the write transfer occurs at T2, where PENABLE is asserted. PREADY is asserted by the Completer at the rising edge of PCLK to indicate that the write data will be accepted at T3. PADDR, PWDATA, and any other control signals, must be stable until the transfer completes.
+
+At the end of the transfer, PENABLE is deasserted. PSEL is also deasserted, unless there is another transfer to the same peripheral.
+
+**With wait states**
+
+during an access phase, when PENABLE is HIGH, the Completer extends the transfer by driving PREADY LOW. And the other signals(PADDR, PWRITE, PSEL, PENABLE, PWDATA, PSTRB, PPROT) must be unchanged while PREADY remains LOW.
+
+PREADY can take any value when PENABLE is LOW. This ensures that peripherals that have a fixed two cycle access can tie PREADY HIGH.
+
+
+
+
 
                   
 
