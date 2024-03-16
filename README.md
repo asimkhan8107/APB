@@ -17,6 +17,10 @@ APB transfer are initiated by an APB bridge.
 ![APB-signal-description_page-0001](https://github.com/asimkhan8107/APB/assets/110652576/5a9a5e22-5355-42f9-bd31-2aec87d0cebd)
 
 **Address Bus**
+An APB interface has a single address bus, **PADDR**, for read and write transfer. PADDR indiates a byte address, and PADDR is permitted to be unaligned with respect to the data width, but in this case result is UNPRIDICTABLE. 
+- Example -> A completer might use the unaligned address, aligned address, or signal an error response.
+
+**DATA Buses**   
 
 
 
