@@ -17,11 +17,15 @@ APB transfer are initiated by an APB bridge.
 ![APB-signal-description_page-0001](https://github.com/asimkhan8107/APB/assets/110652576/5a9a5e22-5355-42f9-bd31-2aec87d0cebd)
 
 **Address Bus**
-An APB interface has a single address bus, **PADDR**, for read and write transfer. PADDR indiates a byte address, and PADDR is permitted to be unaligned with respect to the data width, but in this case result is UNPRIDICTABLE. 
+
+An APB interface has a single address bus, PADDR for read and write transfer. PADDR indiates a byte address, and PADDR is permitted to be unaligned with respect to the data width, but in this case result is UNPRIDICTABLE. 
 - Example -> A completer might use the unaligned address, aligned address, or signal an error response.
 
 **DATA Buses**   
 
+The APB protocol has two independent data buses, PRDATA for read data and PWDATA for write data. The buses can be 8, 16, or 32 bits wide. 
+WARNING: The read and write data buses must have the same width.
+NOTE: Data transfer can not occur concurrently because the read data and write data buses do not have their own individual handshake signals.
 
 
 
