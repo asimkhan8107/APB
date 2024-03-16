@@ -73,9 +73,33 @@ At the end of the transfer, PENABLE is deasserted. PSEL is also deasserted, unle
 
 **With wait states**
 
-during an access phase, when PENABLE is HIGH, the Completer extends the transfer by driving PREADY LOW. And the other signals(PADDR, PWRITE, PSEL, PENABLE, PWDATA, PSTRB, PPROT) must be unchanged while PREADY remains LOW.
+during an access phase, when PENABLE is HIGH, the Completer extends the transfer by driving PREADY LOW. And the other signals (PADDR, PWRITE, PSEL, PENABLE, PWDATA, PSTRB, PPROT) must be unchanged while PREADY remains LOW.
 
 PREADY can take any value when PENABLE is LOW. This ensures that peripherals that have a fixed two cycle access can tie PREADY HIGH.
+
+# READ Transfer
+APB interface consist of two types of read transfer:
+- With no wait states
+- With wait states
+
+**With no wait states**
+
+The timing of the address, write, select, and enable signals are the same as described in WRITE Transfer. The Completer must provide the data before the end of the READ Transfer. 
+
+**With wait state**
+
+The transfer is extended if PREADY is driven LOW during an access phase. And other signals(PADDR, PWRITE, PSEL, PENABLE, PPROT) remain unchanged while PREADY remains LOW.
+
+NOTE: Any number of cycles can be added from zero to upwards. 
+
+# WRITE Transfer with Error
+
+When a write transaction receive an error, this does not mean that the register within the peripheral has not been updated.
+
+# READ Transfer with Error
+
+Read transaction
+
 
 
 
