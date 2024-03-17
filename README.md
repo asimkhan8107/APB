@@ -78,6 +78,8 @@ At the end of the transfer, PENABLE is deasserted. PSEL is also deasserted, unle
 
 **With wait states**
 
+<img width="401" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/ab2bf006-affc-4b2a-8868-58bbf31ec331">
+
 during an access phase, when PENABLE is HIGH, the Completer extends the transfer by driving PREADY LOW. And the other signals (PADDR, PWRITE, PSEL, PENABLE, PWDATA, PSTRB, PPROT) must be unchanged while PREADY remains LOW.
 
 PREADY can take any value when PENABLE is LOW. This ensures that peripherals that have a fixed two cycle access can tie PREADY HIGH.
