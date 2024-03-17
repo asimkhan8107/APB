@@ -78,7 +78,7 @@ At the end of the transfer, PENABLE is deasserted. PSEL is also deasserted, unle
 
 **With wait states**
 
-<img width="401" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/ab2bf006-affc-4b2a-8868-58bbf31ec331">
+<img width="500" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/ab2bf006-affc-4b2a-8868-58bbf31ec331">
 
 during an access phase, when PENABLE is HIGH, the Completer extends the transfer by driving PREADY LOW. And the other signals (PADDR, PWRITE, PSEL, PENABLE, PWDATA, PSTRB, PPROT) must be unchanged while PREADY remains LOW.
 
@@ -91,13 +91,13 @@ APB interface consist of two types of read transfer:
 
 **With no wait states**
 
-<img width="304" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/624dd858-0174-46be-b1f6-fdde70e8f02d">
+<img width="500" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/624dd858-0174-46be-b1f6-fdde70e8f02d">
 
 The timing of the address, write, select, and enable signals are the same as described in WRITE Transfer. The Completer must provide the data before the end of the READ Transfer. 
 
 **With wait state**
 
-<img width="395" alt="Screenshot 2024-03-17 161403" src="https://github.com/asimkhan8107/APB/assets/110652576/2f48ff13-f033-4883-b7da-5a5e590ff7db">
+<img width="500" alt="Screenshot 2024-03-17 161403" src="https://github.com/asimkhan8107/APB/assets/110652576/2f48ff13-f033-4883-b7da-5a5e590ff7db">
 
 The transfer is extended if PREADY is driven LOW during an access phase. And other signals(PADDR, PWRITE, PSEL, PENABLE, PPROT) remain unchanged while PREADY remains LOW.
 
@@ -105,7 +105,7 @@ NOTE: Any number of cycles can be added from zero to upwards.
 
 # WRITE Transfer with Error
 
-<img width="329" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/6366c4a2-6ac6-4298-a9d3-2f4afa9b6238">
+<img width="426" alt="image" src="https://github.com/asimkhan8107/APB/assets/110652576/6366c4a2-6ac6-4298-a9d3-2f4afa9b6238">
 
 When a write transaction receive an error, this does not mean that the register within the peripheral has not been updated.
 
