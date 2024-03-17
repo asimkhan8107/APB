@@ -38,6 +38,9 @@ PSLVERR is only considered valid during the last cycle of an APB transfer, when 
 NOTE: Error response is recommended, but not required, that PSLVERR is driven LOW when PSEL, PENABLE, or PREADY are LOW.
 
 # Operating States 
+
+<img width="303" alt="Screenshot 2024-03-17 160142" src="https://github.com/asimkhan8107/APB/assets/110652576/b5ca7586-d2de-4d16-92be-9e51ec45265d">
+
 The state machine operates through the following states:
 
 **IDLE**    This is the default state of thr APB iterface.
