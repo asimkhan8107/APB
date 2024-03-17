@@ -118,6 +118,10 @@ Read transaction that receive an error can return invalid data. There is no requ
 A read transfer can also complete with an error response, indicating that there is no valid read data available.
 
 
+# Reference
+
+IHI0024E
+
 
 
 
