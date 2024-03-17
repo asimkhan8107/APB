@@ -97,7 +97,7 @@ The timing of the address, write, select, and enable signals are the same as des
 
 **With wait state**
 
-<img width="500" alt="Screenshot 2024-03-17 161403" src="https://github.com/asimkhan8107/APB/assets/110652576/2f48ff13-f033-4883-b7da-5a5e590ff7db">
+<img width="550" alt="Screenshot 2024-03-17 161403" src="https://github.com/asimkhan8107/APB/assets/110652576/2f48ff13-f033-4883-b7da-5a5e590ff7db">
 
 The transfer is extended if PREADY is driven LOW during an access phase. And other signals(PADDR, PWRITE, PSEL, PENABLE, PPROT) remain unchanged while PREADY remains LOW.
 
@@ -111,7 +111,7 @@ When a write transaction receive an error, this does not mean that the register 
 
 # READ Transfer with Error
 
-<img width="426" alt="Screenshot 2024-03-17 161534" src="https://github.com/asimkhan8107/APB/assets/110652576/60e57e2d-ec46-442c-a913-2a14ab1c4399">
+<img width="526" alt="Screenshot 2024-03-17 161534" src="https://github.com/asimkhan8107/APB/assets/110652576/60e57e2d-ec46-442c-a913-2a14ab1c4399">
 
 Read transaction that receive an error can return invalid data. There is no requirement for the peripheral to drive te data bus to all 0s for a read error. A Requester which receives an error response to a read transfer might still use the data.
 
