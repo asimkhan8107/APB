@@ -68,6 +68,8 @@ APB interface consist of two types of write transfer:
 
 **With no wait states**
 
+<img width="279" alt="Screenshot 2024-03-17 160509" src="https://github.com/asimkhan8107/APB/assets/110652576/9497d293-5c3c-4c43-86c0-a675d00b0935">
+
 The setup phase of the write transfer occurs at T1. The select signal, PSEL, is asserted, which means that PADDR, PWRITE, and PWDATA must be valid.
 
 The access phase of the write transfer occurs at T2, where PENABLE is asserted. PREADY is asserted by the Completer at the rising edge of PCLK to indicate that the write data will be accepted at T3. PADDR, PWDATA, and any other control signals, must be stable until the transfer completes.
