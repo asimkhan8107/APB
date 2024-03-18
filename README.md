@@ -43,7 +43,7 @@ NOTE: Error response is recommended, but not required, that PSLVERR is driven LO
 
 The state machine operates through the following states:
 
-**IDLE**    This is the default state of thr APB iterface.
+**IDLE**    This is the default state of the APB interface.
 
 **SETUP**   When a transfer is required, the interface moves into the SETUP state, where the appropriate select signal, PSEL is asserted. The interface only remains in the SETUP state for one clock cycle and always moves to the ACCESS state on the next rising edge of the clock.
 
@@ -56,8 +56,8 @@ The state machine operates through the following states:
                   - PSTRB
 
 EXIT from ACCESS state is controlled by the PREADY signal from the completer.
-- If the PREADY is held LOW by the Completer, then the interface remains in thr ACCESS state.
-- If the PREADY is driven HIGH by the Completer, then the ACCESS state is exited and the bus returns to the IDLE state if no more transaction are required. Alternatively, the bus moves directlt to the SETUP state if another transfer follows.
+- If the PREADY is held LOW by the Completer, then the interface remains in the ACCESS state.
+- If the PREADY is driven HIGH by the Completer, then the ACCESS state is exited and the bus returns to the IDLE state if no more transaction are required. Alternatively, the bus moves directly to the SETUP state if another transfer follows.
 
 # Transfer
 
@@ -113,7 +113,7 @@ When a write transaction receive an error, this does not mean that the register 
 
 <img width="526" alt="Screenshot 2024-03-17 161534" src="https://github.com/asimkhan8107/APB/assets/110652576/60e57e2d-ec46-442c-a913-2a14ab1c4399">
 
-Read transaction that receive an error can return invalid data. There is no requirement for the peripheral to drive te data bus to all 0s for a read error. A Requester which receives an error response to a read transfer might still use the data.
+Read transaction that receive an error can return invalid data. There is no requirement for the peripheral to drive the data bus to all 0s for a read error. A Requester which receives an error response to a read transfer might still use the data.
 
 A read transfer can also complete with an error response, indicating that there is no valid read data available.
 
