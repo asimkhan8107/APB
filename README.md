@@ -122,8 +122,6 @@ A read transfer can also complete with an error response, indicating that there 
 
 IHI0024E
 
-# RTL Schematic
-<img width="955" alt="Screenshot 2024-03-22 022450" src="https://github.com/asimkhan8107/APB/assets/110652576/97f09967-f38a-4ad8-9e67-260b6b9fd697">
 
 
 
